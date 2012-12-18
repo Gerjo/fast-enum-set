@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>EnumSet.h</itemPath>
       <itemPath>ExampleEnum.h</itemPath>
+      <itemPath>Stopwatch.h</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -30,7 +31,7 @@
       <compileType>
         <ccTool>
           <standard>8</standard>
-          <commandLine>-Wall -Wextra</commandLine>
+          <commandLine>-Wall -Wextra -D_GLIBCXX_USE_NANOSLEEP</commandLine>
         </ccTool>
       </compileType>
     </conf>
@@ -45,7 +46,7 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
-          <commandLine>-Wall -Wextra</commandLine>
+          <commandLine>-Wall -Wextra -D_GLIBCXX_USE_NANOSLEEP</commandLine>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>

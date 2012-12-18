@@ -2,8 +2,11 @@
 #include <iostream>
 #include <cassert>
 
+#include <unistd.h>
+
 #include "EnumSet.h"
 #include "ExampleEnum.h"
+#include "Stopwatch.h"
 
 using std::cout;
 using std::endl;
@@ -11,9 +14,13 @@ using std::endl;
 
 
 int main(int, char**) {
+    Stopwatch sw;
+
+
 
     EnumSet<ExampleEnum, unsigned char> enumset;
 
+    sw.start();
     enumset.set(A);
     enumset.set(B);
     enumset.set(C);
@@ -23,11 +30,12 @@ int main(int, char**) {
     enumset.set(G);
     enumset.set(H);
     enumset.set(I);
-    enumset.set(J);
+    enumset.set(J);sleep(1);
     enumset.set(G);
     enumset.set(Y);
     enumset.set(W);
     enumset.set(Z);
+    cout << "Took: " << sw.pause().get() << endl;
 
     cout << endl;
     assert(enumset.has(A));

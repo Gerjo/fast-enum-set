@@ -42,8 +42,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=-Wall -Wextra
-CXXFLAGS=-Wall -Wextra
+CCFLAGS=-Wall -Wextra -D_GLIBCXX_USE_NANOSLEEP
+CXXFLAGS=-Wall -Wextra -D_GLIBCXX_USE_NANOSLEEP
 
 # Fortran Compiler Flags
 FFLAGS=
