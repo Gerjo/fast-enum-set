@@ -29,6 +29,7 @@
       </toolsSet>
       <compileType>
         <ccTool>
+          <standard>8</standard>
           <commandLine>-Wall -Wextra</commandLine>
         </ccTool>
       </compileType>
