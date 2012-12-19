@@ -61,7 +61,7 @@ void output(Stopwatch& a, Stopwatch& b, const std::string text) {
         cout << "EnumSet " << ratio << "x faster.";
     }
 
-    cout << " " << text << endl;
+    //cout << " " << text << endl;
 }
 
 
@@ -122,7 +122,7 @@ int main(int, char**) {
         cout << excelcolumns.str();
     }
 
-    
+
     cout << excelcolumns.str() << endl;
 
     return 0;
@@ -186,6 +186,6 @@ StopWatchSet runBenchmark(const int numLimit, const int repetitionCount) {
         delete meh;
         t.destruct.pause();
     }
-    
+
     return t;
 }
