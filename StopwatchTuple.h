@@ -21,7 +21,7 @@ using std::cout;
 struct StopwatchTuple {
     const std::string name;
 
-    StopwatchTuple(const std::string _name) : name(_name), delimiter("\t") {
+    StopwatchTuple(const std::string _name) : name(_name) {
 
     }
 
@@ -51,8 +51,10 @@ struct StopwatchTuple {
         std::stringstream ss;
 
         if(!tuples.empty()) {
-            for(Pair& pair : tuples[0]) {
-                ss << pair.first << "s" << delimiter;
+            for(Pair& stopwatch : tuples[0]) {
+                for(StopwatchTuple& tuple : tuples) {
+                    ss << stopwatch.first << "(" << tuple.name << ")" << delimiter;
+                }
             }
         }
 
@@ -69,9 +71,9 @@ struct StopwatchTuple {
 
         if(!tuples.empty()) {
             // For each stopwatch, ask each tuple.
-            for(Pair& pair : tuples[0]) {
-                for(StopwatchTuple& stopwatch : tuples) {
-                    ss << stopwatch[pair.first].elapsed() << delimiter;
+            for(Pair& stopwatch : tuples[0]) {
+                for(StopwatchTuple& tuple : tuples) {
+                    ss << tuple[stopwatch.first].elapsed() << delimiter;
                 }
             }
         }
@@ -81,7 +83,7 @@ struct StopwatchTuple {
         return ss.str();
     }
 
-    const std::string delimiter;
+    static const char delimiter = '\t';
 
 private:
     std::map<const std::string, Stopwatch> _stopwatches;
