@@ -9,6 +9,8 @@
 #include "ExampleEnum.h"
 #include "Stopwatch.h"
 #include "Interface.h"
+#include "InterfaceEnumSet.h"
+#include "InterfaceStdSet.h"
 
 using std::cout;
 using std::endl;
@@ -68,7 +70,7 @@ void output(Stopwatch& a, Stopwatch& b, const std::string text) {
 int main(int, char**) {
     //int limits[] = {0, 1, 10, 100, 1000, 10000};
 
-    const int repetitionCount = 1000;
+    const int repetitionCount = 10;
 
     std::stringstream excelcolumns;
     excelcolumns << "size";
@@ -91,7 +93,7 @@ int main(int, char**) {
         cout << "Test repeated " << repetitionCount << " times using a 0 to " << numLimit << " range of " << numLimit << " number(s)." << endl;
 
         StopWatchSet t1 = runBenchmark<InterfaceEnumSet<int> >(numLimit, repetitionCount);
-        StopWatchSet t2 = runBenchmark<InterfaceSet<int> >(numLimit, repetitionCount);
+        StopWatchSet t2 = runBenchmark<InterfaceStdSet<int> >(numLimit, repetitionCount);
 
         // Output per test, human readable:
         output(t1.orderedInsert, t2.orderedInsert, "Inserting sequenced numbers");
