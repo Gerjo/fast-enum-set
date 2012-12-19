@@ -4,7 +4,9 @@
 #include <set>
 #include <array>
 #include <vector>
+#include <map>
 
+#include "StopwatchTuple.h"
 #include "EnumSet.h"
 #include "ExampleEnum.h"
 #include "Stopwatch.h"
@@ -17,49 +19,10 @@ using std::cout;
 using std::endl;
 using std::vector;
 
-struct StopWatchSet {
-    Stopwatch orderedInsert;
-    Stopwatch clear;
-    Stopwatch randomInsert;
-    Stopwatch randomGet;
-    Stopwatch allocate;
-    Stopwatch destruct;
-
-    StopWatchSet() :
-        orderedInsert("orderedInsert"),
-        clear("clear"),
-        randomInsert("randomInsert"),
-        randomGet("randomGet"),
-        allocate("allocate"),
-        destruct("destruct") {
-    }
-};
 
 // Forward declaration:
 template <class T>
-StopWatchSet runBenchmark(const int numLimit, const int repetitionCount);
-
-void output(Stopwatch& a, Stopwatch& b, const std::string text) {
-    double aDuration = a.get();
-    double bDuration = b.get();
-    double ratio = 0;
-
-    cout << std::fixed;
-    cout.precision(5);
-    cout << "[" << aDuration << "] vs [" << bDuration << "] ";
-
-    cout.precision(2);
-    if(aDuration < bDuration) {
-        ratio = aDuration / bDuration;
-        cout << "EnumSet " << ratio << "x faster.";
-
-    } else {
-        ratio = bDuration / aDuration;
-        cout << "EnumSet " << ratio << "x faster.";
-    }
-
-    cout << " " << text << endl;
-}
+void runBenchmark(StopwatchTuple& t, const int numLimit, const int repetitionCount);
 
 
 int main(int, char**) {
@@ -67,120 +30,93 @@ int main(int, char**) {
 
     const int repetitionCount = 100;
 
-    std::stringstream excelcolumns;
-    excelcolumns << "size";
-    excelcolumns << "\t EnumSet-orderedinsert";
-    excelcolumns << "\t std::set-orderedinsert";
-    excelcolumns << "\t EnumSet-clear";
-    excelcolumns << "\t std::set-clear";
-    excelcolumns << "\t EnumSet-randomInsert";
-    excelcolumns << "\t std::set-randomInsert";
-    excelcolumns << "\t EnumSet-randomGet";
-    excelcolumns << "\t std::set-randomGet";
-    excelcolumns << "\t EnumSet-allocate";
-    excelcolumns << "\t std::set-allocate";
-    excelcolumns << "\t EnumSet-destruct";
-    excelcolumns << "\t std::set-destruct";
-    excelcolumns << endl;
+
+    vector<StopwatchTuple> tuples;
+    tuples.push_back(StopwatchTuple("EnumSet<int>"));
+    tuples.push_back(StopwatchTuple("std::set<int>"));
+    tuples.push_back(StopwatchTuple("std::map<int, bool>"));
+
+
+    bool hasHeader = false;
 
     for(int numLimit = 0; numLimit < 5000; numLimit += 100) {
-    //for(const int& numLimit : limits) {
-        cout << "Test repeated " << repetitionCount << " times using a 0 to " << numLimit << " range of " << numLimit << " number(s)." << endl;
+        tuples[0].resetClock();
+        tuples[1].resetClock();
+        tuples[2].resetClock();
 
-        StopWatchSet t1 = runBenchmark<InterfaceEnumSet<int> >(numLimit, repetitionCount);
-        StopWatchSet t2 = runBenchmark<InterfaceStdMap<int> >(numLimit, repetitionCount);
+        runBenchmark<InterfaceEnumSet<int> >(tuples[0], numLimit, repetitionCount);
+        runBenchmark<InterfaceStdSet<int> >(tuples[1], numLimit, repetitionCount);
+        runBenchmark<InterfaceStdMap<int> >(tuples[2], numLimit, repetitionCount);
 
-        // Output per test, human readable:
-        output(t1.orderedInsert, t2.orderedInsert, "Inserting sequenced numbers");
-        output(t1.clear, t2.clear, "clearing sequenced numbers");
-        output(t1.randomInsert, t2.randomInsert, "Inserting random numbers");
-        output(t1.randomGet, t2.randomGet, "Getting those random numbers");
-        output(t1.allocate, t2.allocate, "Construction (new) time");
-        output(t1.destruct, t2.destruct, "Destructor (delete) time");
-        cout << endl << endl;
+        // The headers are only known after running the first time.
+        if(!hasHeader) {
+            cout << "size" << StopwatchTuple::delimiter << StopwatchTuple::getHeader(tuples);
+            hasHeader = true;
+        }
 
-        excelcolumns << std::fixed;
-        excelcolumns.precision(6);
-        excelcolumns << numLimit << "\t";
-        excelcolumns << t1.orderedInsert.get() << "\t";
-        excelcolumns << t2.orderedInsert.get() << "\t";
-        excelcolumns << t1.clear.get() << "\t";
-        excelcolumns << t2.clear.get() << "\t";
-        excelcolumns << t1.randomInsert.get() << "\t";
-        excelcolumns << t2.randomInsert.get() << "\t";
-        excelcolumns << t1.randomGet.get() << "\t";
-        excelcolumns << t2.randomGet.get() << "\t";
-        excelcolumns << t1.allocate.get() << "\t";
-        excelcolumns << t2.allocate.get() << "\t";
-        excelcolumns << t1.destruct.get() << "\t";
-        excelcolumns << t2.destruct.get() << "\t";
-        excelcolumns << endl;
+        cout << numLimit << StopwatchTuple::delimiter << StopwatchTuple::getRow(tuples);
     }
-
-
-    cout << excelcolumns.str() << endl;
 
     return 0;
 }
 
 template <typename T>
-StopWatchSet runBenchmark(const int numLimit, const int repetitionCount) {
-    StopWatchSet t;
+void runBenchmark(StopwatchTuple& t, const int numLimit, const int repetitionCount) {
 
     srand(73);
 
     for(int j = 0; j < repetitionCount; ++j) {
 
-        // Build same random data. Fixed seed for deterministic results.
+        // Build some random data. Fixed seed for deterministic results.
         int* randomNums = new int[numLimit];
         for(int i = 0; i < numLimit; ++i) {
             randomNums[i] = rand() % numLimit;
         }
 
         // bench block:
-        t.allocate.start();
-        T* meh = new T();
-        t.allocate.pause();
+        t["allocate"].resume();
+        T* collection = new T();
+        t["allocate"].pause();
 
 
 
         // bench block:
-        t.orderedInsert.start();
+        t["orderedInsert"].resume();
         for(int i = 0; i < numLimit; ++i) {
-            meh->set(i);
+            collection->set(i);
         }
-        t.orderedInsert.pause();
+        t["orderedInsert"].pause();
 
 
         // bench block:
-        t.clear.restart();
-        meh->clear();
-        t.clear.pause();
+        t["clear"].restart();
+        collection->clear();
+        t["clear"].pause();
 
 
         // bench block:
-        t.randomInsert.restart();
+        t["randomInsert"].restart();
         for(int i = 0; i < numLimit; ++i) {
-            meh->set(randomNums[i]);
+            collection->set(randomNums[i]);
         }
-        t.randomInsert.pause();
+        t["randomInsert"].pause();
 
 
         // bench block:
-        t.randomGet.restart();
+        t["randomGet"].restart();
         for(int i = 0; i < numLimit; ++i) {
-            if(true == meh->has(randomNums[i])) {
+            if(true == collection->has(randomNums[i])) {
                 // nop;
             }
         }
-        t.randomGet.pause();
-        delete[] randomNums;
+        t["randomGet"].pause();
 
         // bench block:
-        t.destruct.start();
-        delete meh;
-        t.destruct.pause();
-    }
+        t["destruct"].resume();
+        delete collection;
+        t["destruct"].pause();
 
-    return t;
+        // Tmp data, not interesting for benchmarking:
+        delete[] randomNums;
+    }
 }

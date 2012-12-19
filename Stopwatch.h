@@ -18,7 +18,7 @@
 
 class Stopwatch {
 public:
-    Stopwatch() : name(""), _elapsed(0), _start(0) {
+    Stopwatch() : name("unknown"), _elapsed(0), _start(0) {
 
     }
 
@@ -26,7 +26,7 @@ public:
 
     }
 
-    Stopwatch& start() {
+    Stopwatch& resume() {
         _start = now();
         return *this;
     }
@@ -37,12 +37,12 @@ public:
     }
 
     Stopwatch& restart() {
-        start();
+        resume();
         _elapsed = 0;
         return *this;
     }
 
-    double get() {
+    double elapsed() {
         #ifdef USE_STD_CLOCK
             return _elapsed / CLOCKS_PER_SEC;
         #else
