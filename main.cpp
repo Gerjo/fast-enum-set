@@ -2,8 +2,8 @@
 #include <iostream>
 #include <cassert>
 #include <set>
-#include <unistd.h>
 #include <array>
+#include <vector>
 
 #include "EnumSet.h"
 #include "ExampleEnum.h"
@@ -12,6 +12,7 @@
 
 using std::cout;
 using std::endl;
+using std::vector;
 
 struct StopWatchSet {
     Stopwatch orderedInsert;
@@ -121,7 +122,7 @@ int main(int, char**) {
         cout << excelcolumns.str();
     }
 
-
+    
     cout << excelcolumns.str() << endl;
 
     return 0;
@@ -136,7 +137,7 @@ StopWatchSet runBenchmark(const int numLimit, const int repetitionCount) {
     for(int j = 0; j < repetitionCount; ++j) {
 
         // Build same random data. Fixed seed for deterministic results.
-        int randomNums[numLimit];
+        int* randomNums = new int[numLimit];
         for(int i = 0; i < numLimit; ++i) {
             randomNums[i] = rand() % numLimit;
         }
@@ -178,13 +179,13 @@ StopWatchSet runBenchmark(const int numLimit, const int repetitionCount) {
             }
         }
         t.randomGet.pause();
-
+        delete[] randomNums;
 
         // bench block:
         t.destruct.start();
         delete meh;
         t.destruct.pause();
     }
-
+    
     return t;
 }
