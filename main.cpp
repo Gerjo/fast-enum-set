@@ -20,6 +20,21 @@ struct StopWatchSet {
     Stopwatch randomGet;
     Stopwatch allocate;
     Stopwatch destruct;
+
+    std::string toExcel(const int numTimes = 0) {
+        std::stringstream ss;
+        ss.precision(5);
+        ss << std::fixed;
+        ss << numTimes << "\t";
+        ss << orderedInsert.get() << "\t";
+        ss << clear.get() << "\t";
+        ss << randomInsert.get() << "\t";
+        ss << randomGet.get() << "\t";
+        ss << allocate.get() << "\t";
+        ss << destruct.get() << "\t";
+        ss << '\n';
+        return ss.str();
+    }
 };
 
 // Forward declaration:
@@ -29,7 +44,7 @@ StopWatchSet runBenchmark(const int numLimit, const int repetitionCount);
 void output(Stopwatch& a, Stopwatch& b, const std::string text) {
     double aDuration = a.get();
     double bDuration = b.get();
-    double scale = 0;
+    double ratio = 0;
 
     cout << std::fixed;
     cout.precision(5);
@@ -37,34 +52,74 @@ void output(Stopwatch& a, Stopwatch& b, const std::string text) {
 
     cout.precision(2);
     if(aDuration < bDuration) {
-        scale = aDuration / bDuration;
-        cout << "EnumSet " << scale << "x faster.";
+        ratio = aDuration / bDuration;
+        cout << "EnumSet " << ratio << "x faster.";
 
     } else {
-        scale = bDuration / aDuration;
-        cout << "EnumSet " << scale << "x faster.";
+        ratio = bDuration / aDuration;
+        cout << "EnumSet " << ratio << "x faster.";
     }
 
     cout << " " << text << endl;
 }
 
+
 int main(int, char**) {
-    int numLimit        = 1000;
-    int repetitionCount = 1000;
+    //int limits[] = {0, 1, 10, 100, 1000, 10000};
 
-    cout << "Test repeated " << repetitionCount << " times using a 0 to " << numLimit << " range of " << numLimit << " numbers." << endl;
+    const int repetitionCount = 1000;
+
+    std::stringstream excelcolumns;
+    excelcolumns << "size";
+    excelcolumns << "\t EnumSet-orderedinsert";
+    excelcolumns << "\t std::set-orderedinsert";
+    excelcolumns << "\t EnumSet-clear";
+    excelcolumns << "\t std::set-clear";
+    excelcolumns << "\t EnumSet-randomInsert";
+    excelcolumns << "\t std::set-randomInsert";
+    excelcolumns << "\t EnumSet-randomGet";
+    excelcolumns << "\t std::set-randomGet";
+    excelcolumns << "\t EnumSet-allocate";
+    excelcolumns << "\t std::set-allocate";
+    excelcolumns << "\t EnumSet-destruct";
+    excelcolumns << "\t std::set-destruct";
+    excelcolumns << endl;
+
+    for(int numLimit = 0; numLimit < 5000; numLimit += 100) {
+    //for(const int& numLimit : limits) {
+        cout << "Test repeated " << repetitionCount << " times using a 0 to " << numLimit << " range of " << numLimit << " number(s)." << endl;
+
+        StopWatchSet t1 = runBenchmark<InterfaceEnumSet<int> >(numLimit, repetitionCount);
+        StopWatchSet t2 = runBenchmark<InterfaceSet<int> >(numLimit, repetitionCount);
+
+        // Output per test, human readable:
+        output(t1.orderedInsert, t2.orderedInsert, "Inserting sequenced numbers");
+        output(t1.clear, t2.clear, "clearing sequenced numbers");
+        output(t1.randomInsert, t2.randomInsert, "Inserting random numbers");
+        output(t1.randomGet, t2.randomGet, "Getting those random numbers");
+        output(t1.allocate, t2.allocate, "Construction (new) time");
+        output(t1.destruct, t2.destruct, "Destructor (delete) time");
+        cout << endl << endl;
 
 
-    StopWatchSet t1 = runBenchmark<InterfaceEnumSet<int> >(numLimit, repetitionCount);
-    StopWatchSet t2 = runBenchmark<InterfaceSet<int> >(numLimit, repetitionCount);
+        excelcolumns << numLimit << "\t";
+        excelcolumns << t1.orderedInsert.get() << "\t";
+        excelcolumns << t2.orderedInsert.get() << "\t";
+        excelcolumns << t1.clear.get() << "\t";
+        excelcolumns << t2.clear.get() << "\t";
+        excelcolumns << t1.randomInsert.get() << "\t";
+        excelcolumns << t2.randomInsert.get() << "\t";
+        excelcolumns << t1.randomGet.get() << "\t";
+        excelcolumns << t2.randomGet.get() << "\t";
+        excelcolumns << t1.allocate.get() << "\t";
+        excelcolumns << t2.allocate.get() << "\t";
+        excelcolumns << t1.destruct.get() << "\t";
+        excelcolumns << t2.destruct.get() << "\t";
+        excelcolumns << endl;
+    }
 
-    output(t1.orderedInsert, t2.orderedInsert, "Inserting sequenced numbers");
-    output(t1.clear, t2.clear, "clearing sequenced numbers");
-    output(t1.randomInsert, t2.randomInsert, "Inserting random numbers");
-    output(t1.randomGet, t2.randomGet, "Getting those random numbers");
-    output(t1.allocate, t2.allocate, "Construction (new) time");
-    output(t1.destruct, t2.destruct, "Destructor (delete) time");
 
+    cout << excelcolumns.str() << endl;
 
     return 0;
 }

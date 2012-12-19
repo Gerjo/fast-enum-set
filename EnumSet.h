@@ -11,11 +11,11 @@ using std::endl;
 using std::cout;
 
 
-template <class T, typename T2>
+template <class T_VALUE, typename T_CONTAINER>
 class EnumSet {
 public:
-    typedef T VALUE_TYPE;
-    typedef T2 STORAGE_TYPE;
+    typedef T_VALUE VALUE_TYPE;
+    typedef T_CONTAINER STORAGE_TYPE;
 
     EnumSet() : _storage(0), _bitlimit(sizeof(STORAGE_TYPE) * BITS_IN_BYTE) {
         allocated = 0;
@@ -71,17 +71,14 @@ public:
         return _storage[row] & bit;
     }
 
-    void insert(VALUE_TYPE item) {
-        set(item);
-    }
-
     void clear() {
         delete[] _storage;
+        _storage  = nullptr;
         allocated = 0;
     }
 
 private:
-    int allocated;
+    STORAGE_TYPE allocated;
     STORAGE_TYPE* _storage;
     const unsigned _bitlimit;
 

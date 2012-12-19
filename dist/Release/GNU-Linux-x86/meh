@@ -1,0 +1,451 @@
+Test repeated 10 times using a 0 to 0 range of 0 number(s).
+[0.00002] vs [0.00002] EnumSet 0.93x faster. Inserting sequenced numbers
+[0.00000] vs [0.00000] EnumSet 0.44x faster. clearing sequenced numbers
+[0.00000] vs [0.00000] EnumSet 0.96x faster. Inserting random numbers
+[0.00000] vs [0.00000] EnumSet 0.93x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.71x faster. Construction (new) time
+[0.00002] vs [0.00002] EnumSet 0.69x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 100 range of 100 number(s).
+[0.00009] vs [0.00033] EnumSet 0.26x faster. Inserting sequenced numbers
+[0.00000] vs [0.00001] EnumSet 0.19x faster. clearing sequenced numbers
+[0.00001] vs [0.00003] EnumSet 0.31x faster. Inserting random numbers
+[0.00001] vs [0.00001] EnumSet 0.46x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.97x faster. Construction (new) time
+[0.00002] vs [0.00008] EnumSet 0.26x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 200 range of 200 number(s).
+[0.00015] vs [0.00066] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00002] EnumSet 0.08x faster. clearing sequenced numbers
+[0.00001] vs [0.00005] EnumSet 0.24x faster. Inserting random numbers
+[0.00001] vs [0.00003] EnumSet 0.50x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.94x faster. Construction (new) time
+[0.00002] vs [0.00016] EnumSet 0.11x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 300 range of 300 number(s).
+[0.00022] vs [0.00101] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00004] EnumSet 0.05x faster. clearing sequenced numbers
+[0.00002] vs [0.00009] EnumSet 0.25x faster. Inserting random numbers
+[0.00002] vs [0.00004] EnumSet 0.42x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.97x faster. Construction (new) time
+[0.00002] vs [0.00024] EnumSet 0.09x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 400 range of 400 number(s).
+[0.00030] vs [0.00132] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00005] EnumSet 0.02x faster. clearing sequenced numbers
+[0.00003] vs [0.00011] EnumSet 0.23x faster. Inserting random numbers
+[0.00002] vs [0.00005] EnumSet 0.42x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.95x faster. Construction (new) time
+[0.00002] vs [0.00032] EnumSet 0.06x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 500 range of 500 number(s).
+[0.00035] vs [0.00112] EnumSet 0.31x faster. Inserting sequenced numbers
+[0.00000] vs [0.00003] EnumSet 0.08x faster. clearing sequenced numbers
+[0.00004] vs [0.00006] EnumSet 0.68x faster. Inserting random numbers
+[0.00003] vs [0.00003] EnumSet 0.91x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.97x faster. Construction (new) time
+[0.00002] vs [0.00024] EnumSet 0.09x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 600 range of 600 number(s).
+[0.00019] vs [0.00089] EnumSet 0.21x faster. Inserting sequenced numbers
+[0.00000] vs [0.00003] EnumSet 0.07x faster. clearing sequenced numbers
+[0.00002] vs [0.00008] EnumSet 0.23x faster. Inserting random numbers
+[0.00002] vs [0.00004] EnumSet 0.42x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.87x faster. Construction (new) time
+[0.00002] vs [0.00021] EnumSet 0.08x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 700 range of 700 number(s).
+[0.00023] vs [0.00104] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00004] EnumSet 0.05x faster. clearing sequenced numbers
+[0.00002] vs [0.00009] EnumSet 0.22x faster. Inserting random numbers
+[0.00002] vs [0.00004] EnumSet 0.40x faster. Getting those random numbers
+[0.00001] vs [0.00002] EnumSet 0.85x faster. Construction (new) time
+[0.00002] vs [0.00024] EnumSet 0.07x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 800 range of 800 number(s).
+[0.00026] vs [0.00118] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00005] EnumSet 0.02x faster. clearing sequenced numbers
+[0.00002] vs [0.00011] EnumSet 0.22x faster. Inserting random numbers
+[0.00002] vs [0.00005] EnumSet 0.40x faster. Getting those random numbers
+[0.00001] vs [0.00002] EnumSet 0.84x faster. Construction (new) time
+[0.00002] vs [0.00028] EnumSet 0.05x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 900 range of 900 number(s).
+[0.00032] vs [0.00141] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00004] EnumSet 0.05x faster. clearing sequenced numbers
+[0.00003] vs [0.00012] EnumSet 0.22x faster. Inserting random numbers
+[0.00002] vs [0.00006] EnumSet 0.38x faster. Getting those random numbers
+[0.00002] vs [0.00001] EnumSet 0.77x faster. Construction (new) time
+[0.00001] vs [0.00028] EnumSet 0.05x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 1000 range of 1000 number(s).
+[0.00035] vs [0.00155] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00005] EnumSet 0.04x faster. clearing sequenced numbers
+[0.00003] vs [0.00014] EnumSet 0.21x faster. Inserting random numbers
+[0.00002] vs [0.00007] EnumSet 0.37x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 0.82x faster. Construction (new) time
+[0.00002] vs [0.00033] EnumSet 0.05x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 1100 range of 1100 number(s).
+[0.00037] vs [0.00168] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00005] EnumSet 0.02x faster. clearing sequenced numbers
+[0.00003] vs [0.00015] EnumSet 0.20x faster. Inserting random numbers
+[0.00003] vs [0.00008] EnumSet 0.33x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 0.98x faster. Construction (new) time
+[0.00002] vs [0.00040] EnumSet 0.04x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 1200 range of 1200 number(s).
+[0.00042] vs [0.00179] EnumSet 0.24x faster. Inserting sequenced numbers
+[0.00000] vs [0.00005] EnumSet 0.02x faster. clearing sequenced numbers
+[0.00003] vs [0.00016] EnumSet 0.21x faster. Inserting random numbers
+[0.00003] vs [0.00008] EnumSet 0.37x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 1.00x faster. Construction (new) time
+[0.00002] vs [0.00033] EnumSet 0.05x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 1300 range of 1300 number(s).
+[0.00041] vs [0.00191] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00006] EnumSet 0.03x faster. clearing sequenced numbers
+[0.00003] vs [0.00019] EnumSet 0.19x faster. Inserting random numbers
+[0.00003] vs [0.00009] EnumSet 0.37x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 0.85x faster. Construction (new) time
+[0.00002] vs [0.00042] EnumSet 0.04x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 1400 range of 1400 number(s).
+[0.00048] vs [0.00213] EnumSet 0.23x faster. Inserting sequenced numbers
+[0.00000] vs [0.00007] EnumSet 0.04x faster. clearing sequenced numbers
+[0.00004] vs [0.00020] EnumSet 0.20x faster. Inserting random numbers
+[0.00004] vs [0.00010] EnumSet 0.37x faster. Getting those random numbers
+[0.00001] vs [0.00002] EnumSet 0.76x faster. Construction (new) time
+[0.00001] vs [0.00047] EnumSet 0.03x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 1500 range of 1500 number(s).
+[0.00052] vs [0.00210] EnumSet 0.25x faster. Inserting sequenced numbers
+[0.00000] vs [0.00006] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00004] vs [0.00020] EnumSet 0.21x faster. Inserting random numbers
+[0.00004] vs [0.00011] EnumSet 0.33x faster. Getting those random numbers
+[0.00001] vs [0.00002] EnumSet 0.96x faster. Construction (new) time
+[0.00002] vs [0.00043] EnumSet 0.04x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 1600 range of 1600 number(s).
+[0.00054] vs [0.00242] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00008] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00004] vs [0.00022] EnumSet 0.20x faster. Inserting random numbers
+[0.00004] vs [0.00011] EnumSet 0.36x faster. Getting those random numbers
+[0.00002] vs [0.00001] EnumSet 0.92x faster. Construction (new) time
+[0.00001] vs [0.00052] EnumSet 0.03x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 1700 range of 1700 number(s).
+[0.00058] vs [0.00264] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00009] EnumSet 0.02x faster. clearing sequenced numbers
+[0.00005] vs [0.00025] EnumSet 0.19x faster. Inserting random numbers
+[0.00004] vs [0.00012] EnumSet 0.35x faster. Getting those random numbers
+[0.00001] vs [0.00002] EnumSet 0.76x faster. Construction (new) time
+[0.00001] vs [0.00055] EnumSet 0.02x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 1800 range of 1800 number(s).
+[0.00061] vs [0.00277] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00010] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00005] vs [0.00024] EnumSet 0.20x faster. Inserting random numbers
+[0.00004] vs [0.00013] EnumSet 0.35x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 1.00x faster. Construction (new) time
+[0.00001] vs [0.00060] EnumSet 0.02x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 1900 range of 1900 number(s).
+[0.00065] vs [0.00291] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00010] EnumSet 0.02x faster. clearing sequenced numbers
+[0.00005] vs [0.00027] EnumSet 0.19x faster. Inserting random numbers
+[0.00005] vs [0.00014] EnumSet 0.32x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.95x faster. Construction (new) time
+[0.00001] vs [0.00064] EnumSet 0.02x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 2000 range of 2000 number(s).
+[0.00069] vs [0.00312] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00010] EnumSet 0.02x faster. clearing sequenced numbers
+[0.00005] vs [0.00027] EnumSet 0.20x faster. Inserting random numbers
+[0.00005] vs [0.00014] EnumSet 0.34x faster. Getting those random numbers
+[0.00002] vs [0.00001] EnumSet 0.73x faster. Construction (new) time
+[0.00002] vs [0.00066] EnumSet 0.03x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 2100 range of 2100 number(s).
+[0.00075] vs [0.00329] EnumSet 0.23x faster. Inserting sequenced numbers
+[0.00000] vs [0.00010] EnumSet 0.02x faster. clearing sequenced numbers
+[0.00006] vs [0.00029] EnumSet 0.19x faster. Inserting random numbers
+[0.00005] vs [0.00015] EnumSet 0.34x faster. Getting those random numbers
+[0.00002] vs [0.00001] EnumSet 0.85x faster. Construction (new) time
+[0.00001] vs [0.00070] EnumSet 0.02x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 2200 range of 2200 number(s).
+[0.00080] vs [0.00346] EnumSet 0.23x faster. Inserting sequenced numbers
+[0.00000] vs [0.00011] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00006] vs [0.00030] EnumSet 0.19x faster. Inserting random numbers
+[0.00005] vs [0.00016] EnumSet 0.34x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 1.00x faster. Construction (new) time
+[0.00001] vs [0.00073] EnumSet 0.02x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 2300 range of 2300 number(s).
+[0.00082] vs [0.00355] EnumSet 0.23x faster. Inserting sequenced numbers
+[0.00000] vs [0.00012] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00006] vs [0.00033] EnumSet 0.18x faster. Inserting random numbers
+[0.00006] vs [0.00016] EnumSet 0.34x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 0.87x faster. Construction (new) time
+[0.00002] vs [0.00076] EnumSet 0.02x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 2400 range of 2400 number(s).
+[0.00084] vs [0.00373] EnumSet 0.23x faster. Inserting sequenced numbers
+[0.00000] vs [0.00012] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00006] vs [0.00033] EnumSet 0.19x faster. Inserting random numbers
+[0.00006] vs [0.00017] EnumSet 0.34x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 0.85x faster. Construction (new) time
+[0.00002] vs [0.00081] EnumSet 0.02x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 2500 range of 2500 number(s).
+[0.00089] vs [0.00392] EnumSet 0.23x faster. Inserting sequenced numbers
+[0.00000] vs [0.00014] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00007] vs [0.00035] EnumSet 0.19x faster. Inserting random numbers
+[0.00006] vs [0.00018] EnumSet 0.33x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 0.92x faster. Construction (new) time
+[0.00002] vs [0.00084] EnumSet 0.02x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 2600 range of 2600 number(s).
+[0.00092] vs [0.00408] EnumSet 0.23x faster. Inserting sequenced numbers
+[0.00000] vs [0.00013] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00007] vs [0.00037] EnumSet 0.18x faster. Inserting random numbers
+[0.00006] vs [0.00019] EnumSet 0.33x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 0.91x faster. Construction (new) time
+[0.00001] vs [0.00087] EnumSet 0.02x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 2700 range of 2700 number(s).
+[0.00088] vs [0.00422] EnumSet 0.21x faster. Inserting sequenced numbers
+[0.00000] vs [0.00014] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00007] vs [0.00039] EnumSet 0.19x faster. Inserting random numbers
+[0.00006] vs [0.00019] EnumSet 0.33x faster. Getting those random numbers
+[0.00001] vs [0.00002] EnumSet 0.81x faster. Construction (new) time
+[0.00002] vs [0.00089] EnumSet 0.02x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 2800 range of 2800 number(s).
+[0.00093] vs [0.00432] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00015] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00007] vs [0.00041] EnumSet 0.18x faster. Inserting random numbers
+[0.00007] vs [0.00020] EnumSet 0.32x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 0.93x faster. Construction (new) time
+[0.00002] vs [0.00093] EnumSet 0.02x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 2900 range of 2900 number(s).
+[0.00095] vs [0.00455] EnumSet 0.21x faster. Inserting sequenced numbers
+[0.00000] vs [0.00015] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00008] vs [0.00041] EnumSet 0.18x faster. Inserting random numbers
+[0.00007] vs [0.00022] EnumSet 0.31x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 0.89x faster. Construction (new) time
+[0.00002] vs [0.00096] EnumSet 0.02x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 3000 range of 3000 number(s).
+[0.00100] vs [0.00470] EnumSet 0.21x faster. Inserting sequenced numbers
+[0.00000] vs [0.00015] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00008] vs [0.00043] EnumSet 0.18x faster. Inserting random numbers
+[0.00007] vs [0.00022] EnumSet 0.33x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 0.93x faster. Construction (new) time
+[0.00001] vs [0.00098] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 3100 range of 3100 number(s).
+[0.00103] vs [0.00486] EnumSet 0.21x faster. Inserting sequenced numbers
+[0.00000] vs [0.00016] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00008] vs [0.00045] EnumSet 0.18x faster. Inserting random numbers
+[0.00007] vs [0.00023] EnumSet 0.32x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.99x faster. Construction (new) time
+[0.00002] vs [0.00103] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 3200 range of 3200 number(s).
+[0.00106] vs [0.00500] EnumSet 0.21x faster. Inserting sequenced numbers
+[0.00000] vs [0.00017] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00008] vs [0.00046] EnumSet 0.18x faster. Inserting random numbers
+[0.00007] vs [0.00024] EnumSet 0.31x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.94x faster. Construction (new) time
+[0.00001] vs [0.00106] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 3300 range of 3300 number(s).
+[0.00110] vs [0.00525] EnumSet 0.21x faster. Inserting sequenced numbers
+[0.00000] vs [0.00017] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00009] vs [0.00048] EnumSet 0.18x faster. Inserting random numbers
+[0.00008] vs [0.00024] EnumSet 0.32x faster. Getting those random numbers
+[0.00002] vs [0.00001] EnumSet 0.77x faster. Construction (new) time
+[0.00002] vs [0.00111] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 3400 range of 3400 number(s).
+[0.00113] vs [0.00537] EnumSet 0.21x faster. Inserting sequenced numbers
+[0.00000] vs [0.00019] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00009] vs [0.00048] EnumSet 0.19x faster. Inserting random numbers
+[0.00008] vs [0.00025] EnumSet 0.32x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.91x faster. Construction (new) time
+[0.00002] vs [0.00111] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 3500 range of 3500 number(s).
+[0.00120] vs [0.00551] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00018] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00009] vs [0.00051] EnumSet 0.18x faster. Inserting random numbers
+[0.00008] vs [0.00026] EnumSet 0.32x faster. Getting those random numbers
+[0.00001] vs [0.00002] EnumSet 0.84x faster. Construction (new) time
+[0.00001] vs [0.00118] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 3600 range of 3600 number(s).
+[0.00122] vs [0.00568] EnumSet 0.21x faster. Inserting sequenced numbers
+[0.00000] vs [0.00018] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00010] vs [0.00052] EnumSet 0.19x faster. Inserting random numbers
+[0.00008] vs [0.00028] EnumSet 0.30x faster. Getting those random numbers
+[0.00002] vs [0.00001] EnumSet 0.85x faster. Construction (new) time
+[0.00001] vs [0.00120] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 3700 range of 3700 number(s).
+[0.00126] vs [0.00588] EnumSet 0.21x faster. Inserting sequenced numbers
+[0.00000] vs [0.00019] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00010] vs [0.00055] EnumSet 0.18x faster. Inserting random numbers
+[0.00009] vs [0.00028] EnumSet 0.31x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 0.95x faster. Construction (new) time
+[0.00002] vs [0.00123] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 3800 range of 3800 number(s).
+[0.00132] vs [0.00610] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00020] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00010] vs [0.00056] EnumSet 0.18x faster. Inserting random numbers
+[0.00009] vs [0.00029] EnumSet 0.32x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.61x faster. Construction (new) time
+[0.00001] vs [0.00124] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 3900 range of 3900 number(s).
+[0.00133] vs [0.00622] EnumSet 0.21x faster. Inserting sequenced numbers
+[0.00000] vs [0.00021] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00010] vs [0.00058] EnumSet 0.17x faster. Inserting random numbers
+[0.00009] vs [0.00030] EnumSet 0.31x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.97x faster. Construction (new) time
+[0.00001] vs [0.00130] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 4000 range of 4000 number(s).
+[0.00138] vs [0.00637] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00022] EnumSet 0.00x faster. clearing sequenced numbers
+[0.00011] vs [0.00058] EnumSet 0.18x faster. Inserting random numbers
+[0.00009] vs [0.00031] EnumSet 0.31x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.91x faster. Construction (new) time
+[0.00001] vs [0.00134] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 4100 range of 4100 number(s).
+[0.00154] vs [0.00684] EnumSet 0.22x faster. Inserting sequenced numbers
+[0.00000] vs [0.00017] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00011] vs [0.00063] EnumSet 0.17x faster. Inserting random numbers
+[0.00010] vs [0.00033] EnumSet 0.29x faster. Getting those random numbers
+[0.00002] vs [0.00001] EnumSet 0.84x faster. Construction (new) time
+[0.00001] vs [0.00126] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 4200 range of 4200 number(s).
+[0.00158] vs [0.00679] EnumSet 0.23x faster. Inserting sequenced numbers
+[0.00000] vs [0.00022] EnumSet 0.00x faster. clearing sequenced numbers
+[0.00012] vs [0.00063] EnumSet 0.19x faster. Inserting random numbers
+[0.00010] vs [0.00033] EnumSet 0.31x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 1.00x faster. Construction (new) time
+[0.00001] vs [0.00139] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 4300 range of 4300 number(s).
+[0.00164] vs [0.00688] EnumSet 0.24x faster. Inserting sequenced numbers
+[0.00000] vs [0.00023] EnumSet 0.00x faster. clearing sequenced numbers
+[0.00012] vs [0.00064] EnumSet 0.18x faster. Inserting random numbers
+[0.00010] vs [0.00033] EnumSet 0.30x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.89x faster. Construction (new) time
+[0.00002] vs [0.00143] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 4400 range of 4400 number(s).
+[0.00164] vs [0.00708] EnumSet 0.23x faster. Inserting sequenced numbers
+[0.00000] vs [0.00025] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00012] vs [0.00065] EnumSet 0.18x faster. Inserting random numbers
+[0.00010] vs [0.00035] EnumSet 0.29x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 0.87x faster. Construction (new) time
+[0.00002] vs [0.00146] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 4500 range of 4500 number(s).
+[0.00169] vs [0.00735] EnumSet 0.23x faster. Inserting sequenced numbers
+[0.00000] vs [0.00024] EnumSet 0.00x faster. clearing sequenced numbers
+[0.00012] vs [0.00066] EnumSet 0.18x faster. Inserting random numbers
+[0.00011] vs [0.00036] EnumSet 0.30x faster. Getting those random numbers
+[0.00002] vs [0.00002] EnumSet 0.90x faster. Construction (new) time
+[0.00002] vs [0.00150] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 4600 range of 4600 number(s).
+[0.00174] vs [0.00748] EnumSet 0.23x faster. Inserting sequenced numbers
+[0.00000] vs [0.00020] EnumSet 0.00x faster. clearing sequenced numbers
+[0.00012] vs [0.00070] EnumSet 0.17x faster. Inserting random numbers
+[0.00011] vs [0.00037] EnumSet 0.30x faster. Getting those random numbers
+[0.00001] vs [0.00002] EnumSet 0.95x faster. Construction (new) time
+[0.00001] vs [0.00128] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 4700 range of 4700 number(s).
+[0.00179] vs [0.00763] EnumSet 0.23x faster. Inserting sequenced numbers
+[0.00000] vs [0.00026] EnumSet 0.01x faster. clearing sequenced numbers
+[0.00013] vs [0.00071] EnumSet 0.19x faster. Inserting random numbers
+[0.00011] vs [0.00037] EnumSet 0.29x faster. Getting those random numbers
+[0.00001] vs [0.00002] EnumSet 0.88x faster. Construction (new) time
+[0.00002] vs [0.00159] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 4800 range of 4800 number(s).
+[0.00185] vs [0.00776] EnumSet 0.24x faster. Inserting sequenced numbers
+[0.00000] vs [0.00027] EnumSet 0.00x faster. clearing sequenced numbers
+[0.00015] vs [0.00072] EnumSet 0.21x faster. Inserting random numbers
+[0.00011] vs [0.00039] EnumSet 0.29x faster. Getting those random numbers
+[0.00001] vs [0.00001] EnumSet 0.90x faster. Construction (new) time
+[0.00002] vs [0.00161] EnumSet 0.01x faster. Destructor (delete) time
+
+
+Test repeated 10 times using a 0 to 4900 range of 4900 number(s).
+[0.00187] vs [0.00723] EnumSet 0.26x faster. Inserting sequenced numbers
+[0.00000] vs [0.00021] EnumSet 0.00x faster. clearing sequenced numbers
+[0.00013] vs [0.00075] EnumSet 0.17x faster. Inserting random numbers
+[0.00011] vs [0.00041] EnumSet 0.28x faster. Getting those random numbers
+[0.00002] vs [0.00001] EnumSet 0.92x faster. Construction (new) time
+[0.00001] vs [0.00137] EnumSet 0.01x faster. Destructor (delete) time
+
+
+size	 EnumSet-orderedinsert	 std::set-orderedinsert	 EnumSet-clear	 std::set-clear	 EnumSet-randomInsert	 std::set-randomInsert	 EnumSet-randomGet	 std::set-randomGet	 EnumSet-allocate	 std::set-allocate	 EnumSet-destruct	 std::set-destruct0	1.79157e-05	1.66867e-05	2.05508e-06	9.0769e-07	1.95566e-06	2.0467e-06	1.90258e-06	2.03983e-06	2.38772e-05	1.69727e-05	2.40565e-05	1.65022e-05	100	8.58277e-05	0.000331957	2.11154e-06	1.09124e-05	9.01218e-06	2.90378e-05	6.04487e-06	1.30434e-05	2.17891e-05	2.10577e-05	2.1021e-05	8.06601e-05	200	0.000148009	0.000661194	2.04006e-06	2.48986e-05	1.29869e-05	5.49572e-05	1.29666e-05	2.59753e-05	2.09705e-05	1.96712e-05	1.77997e-05	0.000163946	300	0.000217901	0.00101098	1.91468e-06	3.79755e-05	2.10536e-05	8.59211e-05	1.6927e-05	3.99447e-05	2.00941e-05	2.0752e-05	2.04666e-05	0.00023817	400	0.000295926	0.00132204	9.59146e-07	4.99114e-05	2.60981e-05	0.000113175	2.29647e-05	5.49721e-05	1.99737e-05	2.09531e-05	2.0347e-05	0.000319353	500	0.000348244	0.00111719	2.08756e-06	2.70992e-05	4.40344e-05	6.49658e-05	2.80197e-05	3.09239e-05	1.66754e-05	1.62337e-05	2.09692e-05	0.000240817	600	0.00018904	0.000891629	2.10456e-06	3.19865e-05	1.8005e-05	7.71311e-05	1.59316e-05	3.79761e-05	1.53186e-05	1.75239e-05	1.80393e-05	0.000214753	700	0.000233393	0.00103921	2.11806e-06	3.90307e-05	2.00185e-05	9.09764e-05	1.70841e-05	4.29931e-05	1.49771e-05	1.7634e-05	1.71316e-05	0.00023675	800	0.000264909	0.00118218	9.44827e-07	5.10802e-05	2.28455e-05	0.000106105	2.00035e-05	5.01014e-05	1.49962e-05	1.7748e-05	1.52409e-05	0.000283904	900	0.000316691	0.00141386	2.08116e-06	3.79587e-05	2.62201e-05	0.000118143	2.20867e-05	5.79336e-05	1.71623e-05	1.32311e-05	1.494e-05	0.000276999	1000	0.000347722	0.00154803	1.88814e-06	5.31127e-05	2.80734e-05	0.0001358	2.49863e-05	6.79936e-05	1.21401e-05	1.4835e-05	1.58488e-05	0.000334144	1100	0.000368237	0.00167613	9.03849e-07	4.89566e-05	3.00428e-05	0.000149889	2.70484e-05	8.10161e-05	1.40851e-05	1.43184e-05	1.78379e-05	0.000400835	1200	0.000421301	0.0017892	9.84524e-07	5.19546e-05	3.28388e-05	0.000160072	2.90297e-05	7.89011e-05	1.36266e-05	1.36168e-05	1.59056e-05	0.000328807	1300	0.000411229	0.00190681	1.94053e-06	5.7089e-05	3.48875e-05	0.000187153	3.18862e-05	8.60874e-05	1.27463e-05	1.49963e-05	1.63356e-05	0.000415109	1400	0.000481986	0.00212604	2.91632e-06	7.00647e-05	3.91017e-05	0.000198062	3.50473e-05	9.50291e-05	1.28812e-05	1.68459e-05	1.43135e-05	0.000470903	1500	0.000516221	0.00210226	8.86037e-07	6.19581e-05	4.22171e-05	0.000204016	3.70634e-05	0.000110976	1.48776e-05	1.54913e-05	1.70827e-05	0.000434619	1600	0.000537657	0.00241701	1.1056e-06	7.90238e-05	4.40062e-05	0.000217915	3.89451e-05	0.000109093	1.59361e-05	1.47208e-05	1.36752e-05	0.000520228	1700	0.00057722	0.00264213	1.91329e-06	8.99184e-05	4.60523e-05	0.000245889	4.08917e-05	0.000117887	1.22142e-05	1.6076e-05	1.19103e-05	0.000553982	1800	0.000612179	0.00277032	9.20496e-07	0.000104015	4.88211e-05	0.000244872	4.40379e-05	0.000125063	1.59353e-05	1.5881e-05	1.4602e-05	0.000603496	1900	0.00064985	0.00290573	2.00549e-06	9.79768e-05	5.1906e-05	0.000272033	4.59771e-05	0.00014309	1.71297e-05	1.62889e-05	1.4118e-05	0.000635881	2000	0.000686077	0.00311592	1.98721e-06	0.000103049	5.38877e-05	0.000273099	4.80978e-05	0.000139917	1.68799e-05	1.22951e-05	1.67597e-05	0.000660882	2100	0.000746911	0.0032852	1.96765e-06	0.000104892	5.71066e-05	0.000293034	4.99788e-05	0.000147064	1.72828e-05	1.47625e-05	1.16222e-05	0.000696895	2200	0.00079692	0.00345897	1.08895e-06	0.000112976	5.89895e-05	0.000304012	5.29543e-05	0.000157074	1.38154e-05	1.38219e-05	1.4158e-05	0.00072888	2300	0.000815724	0.00355422	9.36445e-07	0.000120106	6.0837e-05	0.000328989	5.50866e-05	0.000163064	1.33802e-05	1.16877e-05	1.72312e-05	0.000761832	2400	0.000839103	0.00372625	1.01991e-06	0.00012202	6.31589e-05	0.000332996	5.70706e-05	0.000169971	1.26673e-05	1.4864e-05	1.77271e-05	0.000806922	2500	0.000886969	0.00392436	9.68692e-07	0.000141028	6.71076e-05	0.000353977	5.89662e-05	0.000178972	1.28644e-05	1.17813e-05	1.76891e-05	0.000837986	2600	0.000922149	0.00408418	1.93715e-06	0.000134107	6.88378e-05	0.00037397	6.30275e-05	0.000188984	1.28056e-05	1.40314e-05	1.48389e-05	0.000872806	2700	0.000883981	0.00422465	1.95997e-06	0.000139027	7.28605e-05	0.000389883	6.39508e-05	0.000193923	1.29751e-05	1.59711e-05	1.5969e-05	0.000890804	2800	0.000933962	0.00432403	1.09198e-06	0.000146076	7.39925e-05	0.000405018	6.59369e-05	0.000203992	1.26188e-05	1.16912e-05	2.26827e-05	0.000929193	2900	0.000954156	0.00454591	1.07009e-06	0.000151963	7.59707e-05	0.000413137	6.80077e-05	0.000220004	1.38128e-05	1.22801e-05	2.17216e-05	0.000958432	3000	0.000998055	0.00469873	9.23406e-07	0.000151899	7.7824e-05	0.000433834	7.19537e-05	0.000221005	1.37573e-05	1.48652e-05	1.2901e-05	0.000983634	3100	0.00103088	0.00486211	9.54024e-07	0.000163964	8.08546e-05	0.000448979	7.3077e-05	0.000226891	1.52088e-05	1.50008e-05	1.51118e-05	0.0010319	3200	0.00105886	0.00500287	9.33302e-07	0.000166973	8.30723e-05	0.000458127	7.49569e-05	0.000244932	1.58566e-05	1.6866e-05	1.48755e-05	0.00105754	3300	0.00110303	0.00524972	1.94961e-06	0.000168055	8.78501e-05	0.000483062	7.69664e-05	0.000242073	1.56448e-05	1.20919e-05	1.539e-05	0.00111082	3400	0.00113423	0.00537009	1.03889e-06	0.000191088	8.99393e-05	0.000483969	8.09098e-05	0.000252072	1.86524e-05	1.70363e-05	1.50305e-05	0.00110583	3500	0.00119717	0.00551093	1.99338e-06	0.000178933	9.18939e-05	0.000510211	8.29106e-05	0.000260042	1.27299e-05	1.50683e-05	1.37134e-05	0.00117806	3600	0.00121578	0.005685	1.03679e-06	0.000183099	9.5891e-05	0.000517086	8.3901e-05	0.000277049	1.61588e-05	1.37907e-05	1.49547e-05	0.00119506	3700	0.00125633	0.0058843	1.89478e-06	0.000191976	9.90337e-05	0.000548857	8.68979e-05	0.00027811	1.26482e-05	1.20519e-05	1.56664e-05	0.00122679	3800	0.00131962	0.00610489	1.94868e-06	0.000197104	0.000100849	0.000559978	9.10445e-05	0.000289025	1.5134e-05	2.46625e-05	1.49225e-05	0.0012395	3900	0.00133044	0.00621621	2.01911e-06	0.000210904	0.00010192	0.00058295	9.19229e-05	0.000297109	1.6577e-05	1.60553e-05	1.29335e-05	0.00130365	4000	0.00137995	0.00637381	1.02923e-06	0.000224042	0.000107122	0.000583975	9.41183e-05	0.000305942	1.50831e-05	1.66564e-05	1.41242e-05	0.0013379	4100	0.00153592	0.00683809	1.89291e-06	0.000174925	0.000109078	0.000629065	9.59751e-05	0.000331925	1.60105e-05	1.33736e-05	1.15213e-05	0.00125675	4200	0.00157724	0.00679275	1.10827e-06	0.00022305	0.000117962	0.000629982	0.000100992	0.000326888	1.52376e-05	1.53105e-05	1.205e-05	0.00139109	4300	0.00164009	0.00687539	9.28179e-07	0.000226014	0.000115067	0.000638848	0.000100957	0.000333979	1.60857e-05	1.80168e-05	1.61135e-05	0.00143393	4400	0.00164308	0.00708018	1.90048e-06	0.000248112	0.000116801	0.000652011	0.000103022	0.000350982	1.27911e-05	1.47428e-05	1.70822e-05	0.00146179	4500	0.00168893	0.0073549	9.13045e-07	0.000241931	0.000119052	0.000664982	0.000106068	0.000358887	1.52526e-05	1.69866e-05	1.50171e-05	0.00150482	4600	0.00174261	0.00747807	9.23756e-07	0.000196064	0.000121063	0.000697938	0.000109992	0.000365895	1.44141e-05	1.51985e-05	1.20222e-05	0.00127909	4700	0.00178986	0.00763146	2.04064e-06	0.000257955	0.000131941	0.000712032	0.000109904	0.000373968	1.38988e-05	1.5736e-05	1.50742e-05	0.00158708	4800	0.00185429	0.00775571	9.46457e-07	0.000268082	0.000148085	0.000716954	0.000113074	0.000390883	1.27533e-05	1.42318e-05	1.64401e-05	0.00161091	4900	0.00186797	0.0072292	9.50298e-07	0.000208919	0.000130089	0.000750872	0.000114959	0.0004059	1.5817e-05	1.44768e-05	1.19332e-05	0.00136803	

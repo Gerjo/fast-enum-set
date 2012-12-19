@@ -50,10 +50,10 @@ public:
     }
 
     virtual void clear() {
-        //_set.clear();
+        _set.clear();
     }
 private:
-    EnumSet<T, char> _set;
+    EnumSet<T, unsigned> _set;
 };
 
 #endif	/* INTERFACE_H */
