@@ -8,6 +8,9 @@
 #ifndef INTERFACESTDSET_H
 #define	INTERFACESTDSET_H
 
+#include "Interface.h"
+#include <set>
+
 template <class T>
 class InterfaceStdSet : public Interface<T> {
 public:

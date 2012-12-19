@@ -18,7 +18,11 @@
 
 class Stopwatch {
 public:
-    Stopwatch() : _elapsed(0), _start(0) {
+    Stopwatch() : name(""), _elapsed(0), _start(0) {
+
+    }
+
+    Stopwatch(std::string _name) : name(_name), _elapsed(0), _start(0) {
 
     }
 
@@ -46,9 +50,12 @@ public:
         #endif
     }
 
+    std::string name;
+
 private:
     double _elapsed;
     double _start;
+
 
     double now() {
         #ifdef USE_STD_CLOCK

@@ -11,6 +11,7 @@
 #include "Interface.h"
 #include "InterfaceEnumSet.h"
 #include "InterfaceStdSet.h"
+#include "InterfaceStdMap.h"
 
 using std::cout;
 using std::endl;
@@ -24,19 +25,13 @@ struct StopWatchSet {
     Stopwatch allocate;
     Stopwatch destruct;
 
-    std::string toExcel(const int numTimes = 0) {
-        std::stringstream ss;
-        ss.precision(5);
-        ss << std::fixed;
-        ss << numTimes << "\t";
-        ss << orderedInsert.get() << "\t";
-        ss << clear.get() << "\t";
-        ss << randomInsert.get() << "\t";
-        ss << randomGet.get() << "\t";
-        ss << allocate.get() << "\t";
-        ss << destruct.get() << "\t";
-        ss << '\n';
-        return ss.str();
+    StopWatchSet() :
+        orderedInsert("orderedInsert"),
+        clear("clear"),
+        randomInsert("randomInsert"),
+        randomGet("randomGet"),
+        allocate("allocate"),
+        destruct("destruct") {
     }
 };
 
@@ -70,7 +65,7 @@ void output(Stopwatch& a, Stopwatch& b, const std::string text) {
 int main(int, char**) {
     //int limits[] = {0, 1, 10, 100, 1000, 10000};
 
-    const int repetitionCount = 10;
+    const int repetitionCount = 100;
 
     std::stringstream excelcolumns;
     excelcolumns << "size";
@@ -93,7 +88,7 @@ int main(int, char**) {
         cout << "Test repeated " << repetitionCount << " times using a 0 to " << numLimit << " range of " << numLimit << " number(s)." << endl;
 
         StopWatchSet t1 = runBenchmark<InterfaceEnumSet<int> >(numLimit, repetitionCount);
-        StopWatchSet t2 = runBenchmark<InterfaceStdSet<int> >(numLimit, repetitionCount);
+        StopWatchSet t2 = runBenchmark<InterfaceStdMap<int> >(numLimit, repetitionCount);
 
         // Output per test, human readable:
         output(t1.orderedInsert, t2.orderedInsert, "Inserting sequenced numbers");

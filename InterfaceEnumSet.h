@@ -8,6 +8,8 @@
 #ifndef INTERFACEENUMSET_H
 #define	INTERFACEENUMSET_H
 
+#include "Interface.h"
+
 template <class T>
 class InterfaceEnumSet : public Interface<T> {
 public:
