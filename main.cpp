@@ -1,10 +1,5 @@
-#include <cstdlib>
 #include <iostream>
-#include <cassert>
-#include <set>
-#include <array>
 #include <vector>
-#include <map>
 
 #include "StopwatchTuple.h"
 #include "EnumSet.h"
