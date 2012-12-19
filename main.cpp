@@ -61,7 +61,7 @@ void output(Stopwatch& a, Stopwatch& b, const std::string text) {
         cout << "EnumSet " << ratio << "x faster.";
     }
 
-    //cout << " " << text << endl;
+    cout << " " << text << endl;
 }
 
 
@@ -118,8 +118,6 @@ int main(int, char**) {
         excelcolumns << t1.destruct.get() << "\t";
         excelcolumns << t2.destruct.get() << "\t";
         excelcolumns << endl;
-
-        cout << excelcolumns.str();
     }
 
 
