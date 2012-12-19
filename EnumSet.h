@@ -20,6 +20,7 @@ public:
     EnumSet() : _storage(0), _bitlimit(sizeof(STORAGE_TYPE) * BITS_IN_BYTE) {
         allocated = 0;
         _storage  = nullptr;
+
     }
 
     ~EnumSet() {
