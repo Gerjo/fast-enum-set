@@ -36,10 +36,8 @@ public:
         return *this;
     }
 
-    std::string get() {
-        std::stringstream ss;
-        ss << std::fixed << _elapsed;
-        return ss.str();
+    double get() {
+        return _elapsed;
     }
 
 private:

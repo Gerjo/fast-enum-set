@@ -75,6 +75,11 @@ public:
         set(item);
     }
 
+    void clear() {
+        delete[] _storage;
+        allocated = 0;
+    }
+
 private:
     int allocated;
     STORAGE_TYPE* _storage;

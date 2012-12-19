@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>EnumSet.h</itemPath>
       <itemPath>ExampleEnum.h</itemPath>
+      <itemPath>Interface.h</itemPath>
       <itemPath>Stopwatch.h</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
