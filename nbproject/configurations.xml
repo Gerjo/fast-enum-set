@@ -46,6 +46,7 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <standard>8</standard>
           <commandLine>-Wall -Wextra -D_GLIBCXX_USE_NANOSLEEP</commandLine>
         </ccTool>
         <fortranCompilerTool>

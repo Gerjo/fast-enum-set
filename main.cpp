@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <cassert>
-
+#include <set>
 #include <unistd.h>
 
 #include "EnumSet.h"
@@ -16,42 +16,31 @@ using std::endl;
 int main(int, char**) {
     Stopwatch sw;
 
-
-
     EnumSet<ExampleEnum, unsigned char> enumset;
+    //std::set<ExampleEnum> enumset;
 
     sw.start();
-    enumset.set(A);
-    enumset.set(B);
-    enumset.set(C);
-    enumset.set(D);
-    enumset.set(E);
-    enumset.set(F);
-    enumset.set(G);
-    enumset.set(H);
-    enumset.set(I);
-    enumset.set(J);sleep(1);
-    enumset.set(G);
-    enumset.set(Y);
-    enumset.set(W);
-    enumset.set(Z);
-    cout << "Took: " << sw.pause().get() << endl;
+    enumset.insert(A);
+    enumset.insert(B);
+    enumset.insert(C);
+    enumset.insert(D);
+    enumset.insert(E);
+    enumset.insert(F);
+    enumset.insert(G);
+    enumset.insert(H);
+    enumset.insert(I);
+    enumset.insert(J);
+    enumset.insert(G);
+    enumset.insert(Y);
+    enumset.insert(W);
+    enumset.insert(Z);
+    cout << "Setting took: " << sw.pause().get() << endl;
 
     cout << endl;
-    assert(enumset.has(A));
-    assert(enumset.has(B));
-    assert(enumset.has(C));
-    assert(enumset.has(D));
-    assert(enumset.has(E));
-    assert(enumset.has(F));
-    assert(enumset.has(G));
-    assert(enumset.has(H));
-    assert(enumset.has(I));
-    assert(enumset.has(J));
-    assert(enumset.has(G));
-    assert(enumset.has(Y));
-    assert(enumset.has(W));
-    assert(enumset.has(Z));
+
+    sw.restart();
+
+    cout << "Get assertion took: " << sw.pause().get() << endl;
 
     cout << "sizeof " << sizeof(enumset) << endl;
 

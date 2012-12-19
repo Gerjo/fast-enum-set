@@ -71,6 +71,10 @@ public:
         return _storage[row] & bit;
     }
 
+    void insert(VALUE_TYPE item) {
+        set(item);
+    }
+
 private:
     int allocated;
     STORAGE_TYPE* _storage;
