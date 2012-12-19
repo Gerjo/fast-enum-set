@@ -26,10 +26,10 @@ void runBenchmark(StopwatchTuple& t, const int numLimit, const int repetitionCou
 
 
 int main(int, char**) {
-    //int limits[] = {0, 1, 10, 100, 1000, 10000};
 
-    const int repetitionCount = 100;
-
+    const int repetitionCount = 1000;
+    const int increments = 100;
+    const int upperlimit = 5000;
 
     vector<StopwatchTuple> tuples;
     tuples.push_back(StopwatchTuple("EnumSet<int>"));
@@ -39,14 +39,14 @@ int main(int, char**) {
 
     bool hasHeader = false;
 
-    for(int numLimit = 0; numLimit < 5000; numLimit += 100) {
+    for(int numLimit = 0; numLimit < upperlimit; numLimit += increments) {
         tuples[0].resetClock();
         tuples[1].resetClock();
         tuples[2].resetClock();
 
-        runBenchmark<InterfaceEnumSet<int> >(tuples[0], numLimit, repetitionCount);
-        runBenchmark<InterfaceStdSet<int> >(tuples[1], numLimit, repetitionCount);
-        runBenchmark<InterfaceStdMap<int> >(tuples[2], numLimit, repetitionCount);
+        {runBenchmark<InterfaceEnumSet<int> >(tuples[0], numLimit, repetitionCount);}
+        {runBenchmark<InterfaceStdSet<int> >(tuples[1], numLimit, repetitionCount);}
+        {runBenchmark<InterfaceStdMap<int> >(tuples[2], numLimit, repetitionCount);}
 
         // The headers are only known after running the first time.
         if(!hasHeader) {
