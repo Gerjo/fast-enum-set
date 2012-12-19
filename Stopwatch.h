@@ -11,7 +11,10 @@
 #include <chrono>
 #include <sstream>
 #include <string>
+#include <ctime>
 
+
+//#define USE_STD_CLOCK 1
 
 class Stopwatch {
 public:
@@ -36,7 +39,11 @@ public:
     }
 
     double get() {
-        return _elapsed;
+        #ifdef USE_STD_CLOCK
+            return _elapsed / CLOCKS_PER_SEC;
+        #else
+            return _elapsed;
+        #endif
     }
 
 private:
@@ -44,10 +51,12 @@ private:
     double _start;
 
     double now() {
-        // I couldn't get duration, time_point and clock to work just yet.
-        return std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000000.0;
+        #ifdef USE_STD_CLOCK
+            return clock();
+        #else
+            return std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000000.0;
+        #endif
     }
-
 };
 
 
