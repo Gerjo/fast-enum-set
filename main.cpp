@@ -101,7 +101,8 @@ int main(int, char**) {
         output(t1.destruct, t2.destruct, "Destructor (delete) time");
         cout << endl << endl;
 
-
+        excelcolumns << std::fixed;
+        excelcolumns.precision(6);
         excelcolumns << numLimit << "\t";
         excelcolumns << t1.orderedInsert.get() << "\t";
         excelcolumns << t2.orderedInsert.get() << "\t";
@@ -116,6 +117,8 @@ int main(int, char**) {
         excelcolumns << t1.destruct.get() << "\t";
         excelcolumns << t2.destruct.get() << "\t";
         excelcolumns << endl;
+
+        cout << excelcolumns.str();
     }
 
 
