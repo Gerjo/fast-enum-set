@@ -13,17 +13,25 @@
 #include <string>
 #include <ctime>
 
+#ifdef _WIN32
+#include <Windows.h>
+#endif
 
 //#define USE_STD_CLOCK 1
+//#define USE_QUERY_PERFORMANCE_COUNTER 1
 
 class Stopwatch {
 public:
     Stopwatch() : name("unknown"), _elapsed(0), _start(0) {
-
+    #ifdef USE_QUERY_PERFORMANCE_COUNTER
+        initializeFrequency();
+    #endif
     }
 
     Stopwatch(std::string _name) : name(_name), _elapsed(0), _start(0) {
-
+    #ifdef USE_QUERY_PERFORMANCE_COUNTER
+        initializeFrequency();
+    #endif
     }
 
     Stopwatch& resume() {
@@ -45,6 +53,8 @@ public:
     double elapsed() {
         #ifdef USE_STD_CLOCK
             return _elapsed / CLOCKS_PER_SEC;
+        #elif USE_QUERY_PERFORMANCE_COUNTER
+            return _elapsed / _frequency;
         #else
             return _elapsed;
         #endif
@@ -53,17 +63,31 @@ public:
     std::string name;
 
 private:
+#ifdef USE_QUERY_PERFORMANCE_COUNTER
+    LARGE_INTEGER _startq;
+    double _frequency;
+#endif
     double _elapsed;
     double _start;
-
 
     double now() {
         #ifdef USE_STD_CLOCK
             return clock();
+        #elif USE_QUERY_PERFORMANCE_COUNTER
+            QueryPerformanceCounter(&_startq);
+            return static_cast<double>(_startq.QuadPart);
         #else
             return std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000000.0;
         #endif
     }
+
+#ifdef USE_QUERY_PERFORMANCE_COUNTER
+    void initializeFrequency() {
+        LARGE_INTEGER freq;
+        QueryPerformanceFrequency(&freq);
+        _frequency = freq.QuadPart;
+    }
+#endif
 };
 
 
