@@ -23,15 +23,11 @@
 class Stopwatch {
 public:
     Stopwatch() : name("unknown"), _elapsed(0), _start(0) {
-    #ifdef USE_QUERY_PERFORMANCE_COUNTER
-        initializeFrequency();
-    #endif
+        init();
     }
 
     Stopwatch(std::string _name) : name(_name), _elapsed(0), _start(0) {
-    #ifdef USE_QUERY_PERFORMANCE_COUNTER
-        initializeFrequency();
-    #endif
+        init();
     }
 
     Stopwatch& resume() {
@@ -81,13 +77,13 @@ private:
         #endif
     }
 
-#ifdef USE_QUERY_PERFORMANCE_COUNTER
-    void initializeFrequency() {
-        LARGE_INTEGER freq;
-        QueryPerformanceFrequency(&freq);
-        _frequency = freq.QuadPart;
+    void init(void) {
+        #ifdef USE_QUERY_PERFORMANCE_COUNTER
+            LARGE_INTEGER freq;
+            QueryPerformanceFrequency(&freq);
+            _frequency = freq.QuadPart;
+        #endif
     }
-#endif
 };
 
 
