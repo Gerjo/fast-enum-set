@@ -43,6 +43,7 @@
         </ccTool>
         <linkerTool>
           <output>dist</output>
+          <commandLine>-lrt</commandLine>
         </linkerTool>
       </compileType>
     </conf>
@@ -68,6 +69,7 @@
         </asmTool>
         <linkerTool>
           <output>fast-enum-set.run</output>
+          <commandLine>-lrt</commandLine>
         </linkerTool>
       </compileType>
     </conf>
