@@ -23,7 +23,7 @@ void runBenchmark(StopwatchTuple& t, const int numLimit, const int repetitionCou
 
 int main(int, char**) {
 
-    const int repetitionCount = 100;
+    const int repetitionCount = 1000;
     const int increments = 100;
     const int upperlimit = 5000;
 
