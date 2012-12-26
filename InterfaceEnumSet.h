@@ -25,7 +25,7 @@ public:
         _set.clear();
     }
 private:
-    EnumSet<T, unsigned> _set;
+    EnumSet<T, char> _set;
 };
 
 #endif	/* INTERFACEENUMSET_H */

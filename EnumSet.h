@@ -26,9 +26,9 @@ public:
     }
 
     EnumSet& set(VALUE_TYPE item) {
-        STORAGE_TYPE row    = item / _bitlimit;
-        STORAGE_TYPE column = item - (row * _bitlimit);
-        STORAGE_TYPE bit    = 1 << column;
+        int row    = (item <_bitlimit) ? 0 : item / _bitlimit;
+        int column = (row == 0) ? item : item - (row * _bitlimit);
+        int bit    = 1 << column;
 
         if(row >= _allocated) {
             const int newSize = row + 1;
@@ -50,9 +50,9 @@ public:
     }
 
     bool has(const VALUE_TYPE& item) {
-        STORAGE_TYPE row    = item / _bitlimit;
-        STORAGE_TYPE column = item - (row * _bitlimit);
-        STORAGE_TYPE bit    = 1 << column;
+        int row    = (item <_bitlimit) ? 0 : item / _bitlimit;
+        int column = (row == 0) ? item : item - (row * _bitlimit);
+        int bit    = 1 << column;
 
         if(row > _allocated) {
             return false;
@@ -68,9 +68,9 @@ public:
     }
 
 private:
-    STORAGE_TYPE _allocated;
+    int _allocated;
     STORAGE_TYPE* _storage;
-    const unsigned _bitlimit;
+    const int _bitlimit;
     static const unsigned char BITS_IN_BYTE = 8;
 };
 

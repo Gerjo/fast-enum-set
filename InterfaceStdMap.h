@@ -5,8 +5,8 @@
  * Created on December 19, 2012, 7:04 PM
  */
 
-#ifndef INTERFACESTDBITSET_H
-#define	INTERFACESTDBITSET_H
+#ifndef INTERFACESTDMAP_H
+#define	INTERFACESTDMAP_H
 
 #include "Interface.h"
 #include <map>
@@ -29,5 +29,5 @@ private:
     std::map<T, bool> _map;
 };
 
-#endif	/* INTERFACESTDBITSET_H */
+#endif	/* INTERFACESTDMAP_H */
 

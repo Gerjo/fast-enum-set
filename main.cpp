@@ -9,6 +9,7 @@
 #include "InterfaceEnumSet.h"
 #include "InterfaceStdSet.h"
 #include "InterfaceStdMap.h"
+#include "InterfaceStdBitSet.h"
 
 using std::cout;
 using std::endl;
@@ -22,14 +23,15 @@ void runBenchmark(StopwatchTuple& t, const int numLimit, const int repetitionCou
 
 int main(int, char**) {
 
-    const int repetitionCount = 1000;
+    const int repetitionCount = 100;
     const int increments = 100;
     const int upperlimit = 5000;
 
     vector<StopwatchTuple> tuples;
     tuples.push_back(StopwatchTuple("EnumSet<int>"));
     tuples.push_back(StopwatchTuple("std::set<int>"));
-    tuples.push_back(StopwatchTuple("std::map<int, bool>"));
+    //tuples.push_back(StopwatchTuple("std::map<int, bool>"));
+    tuples.push_back(StopwatchTuple("std::bitset<5000>"));
 
 
     bool hasHeader = false;
@@ -38,10 +40,12 @@ int main(int, char**) {
         tuples[0].resetClock();
         tuples[1].resetClock();
         tuples[2].resetClock();
+        //tuples[3].resetClock();
 
         {runBenchmark<InterfaceEnumSet<int> >(tuples[0], numLimit, repetitionCount);}
         {runBenchmark<InterfaceStdSet<int> >(tuples[1], numLimit, repetitionCount);}
-        {runBenchmark<InterfaceStdMap<int> >(tuples[2], numLimit, repetitionCount);}
+        //{runBenchmark<InterfaceStdMap<int> >(tuples[2], numLimit, repetitionCount);}
+        {runBenchmark<InterfaceStdBitSet<int> >(tuples[2], numLimit, repetitionCount);}
 
         // The headers are only known after running the first time.
         if(!hasHeader) {
