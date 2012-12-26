@@ -30,7 +30,7 @@ int main(int, char**) {
     vector<StopwatchTuple> tuples;
     tuples.push_back(StopwatchTuple("EnumSet<int>"));
     tuples.push_back(StopwatchTuple("std::set<int>"));
-    //tuples.push_back(StopwatchTuple("std::map<int, bool>"));
+    tuples.push_back(StopwatchTuple("std::map<int, bool>"));
     tuples.push_back(StopwatchTuple("std::bitset<5000>"));
 
 
@@ -43,7 +43,7 @@ int main(int, char**) {
 
         {runBenchmark<InterfaceEnumSet<int> >(tuples[0], numLimit, repetitionCount);}
         {runBenchmark<InterfaceStdSet<int> >(tuples[1], numLimit, repetitionCount);}
-        //{runBenchmark<InterfaceStdMap<int> >(tuples[2], numLimit, repetitionCount);}
+        {runBenchmark<InterfaceStdMap<int> >(tuples[2], numLimit, repetitionCount);}
         {runBenchmark<InterfaceStdBitSet<int> >(tuples[2], numLimit, repetitionCount);}
 
         // The headers are only known after running the first time.
