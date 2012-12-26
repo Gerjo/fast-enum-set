@@ -59,7 +59,7 @@ LDLIBSOPTIONS=
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk fast-enum-set.run
 
 fast-enum-set.run: ${OBJECTFILES}
-	${LINK.cc} -o fast-enum-set.run ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -lrt -o fast-enum-set.run ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

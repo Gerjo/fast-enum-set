@@ -59,7 +59,7 @@ LDLIBSOPTIONS=
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk dist
 
 dist: ${OBJECTFILES}
-	${LINK.cc} -o dist ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -lrt -o dist ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
