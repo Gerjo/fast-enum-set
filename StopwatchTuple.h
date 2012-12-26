@@ -53,7 +53,7 @@ struct StopwatchTuple {
         if(!tuples.empty()) {
             for(Pair& stopwatch : tuples[0]) {
                 for(StopwatchTuple& tuple : tuples) {
-                    ss << stopwatch.first << "(" << tuple.name << ")" << delimiter;
+                    ss << stopwatch.first << "(" << tuple.name << ") " << delimiter;
                 }
             }
         }
