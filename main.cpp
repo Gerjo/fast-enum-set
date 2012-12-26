@@ -44,7 +44,7 @@ int main(int, char**) {
         {runBenchmark<InterfaceEnumSet<int> >(tuples[0], numLimit, repetitionCount);}
         {runBenchmark<InterfaceStdSet<int> >(tuples[1], numLimit, repetitionCount);}
         {runBenchmark<InterfaceStdMap<int> >(tuples[2], numLimit, repetitionCount);}
-        {runBenchmark<InterfaceStdBitSet<int> >(tuples[2], numLimit, repetitionCount);}
+        {runBenchmark<InterfaceStdBitSet<int> >(tuples[3], numLimit, repetitionCount);}
 
         // The headers are only known after running the first time.
         if(!hasHeader) {
