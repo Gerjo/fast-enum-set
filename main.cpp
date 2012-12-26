@@ -103,8 +103,8 @@ void runBenchmark(StopwatchTuple& t, const int numLimit, const int repetitionCou
         // bench block:
         t["randomGet"].restart();
         for(int i = 0; i < numLimit; ++i) {
-            if(true == collection->has(randomNums[i])) {
-                // nop;
+            if(true != collection->has(randomNums[i])) {
+                throw std::string("Assertion failed, expected enum to be present, but it was not.");
             }
         }
         t["randomGet"].pause();
