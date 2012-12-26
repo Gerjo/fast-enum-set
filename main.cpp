@@ -37,10 +37,9 @@ int main(int, char**) {
     bool hasHeader = false;
 
     for(int numLimit = 0; numLimit < upperlimit; numLimit += increments) {
-        tuples[0].resetClock();
-        tuples[1].resetClock();
-        tuples[2].resetClock();
-        //tuples[3].resetClock();
+        for(StopwatchTuple& tuple : tuples) {
+            tuple.resetClock();
+        }
 
         {runBenchmark<InterfaceEnumSet<int> >(tuples[0], numLimit, repetitionCount);}
         {runBenchmark<InterfaceStdSet<int> >(tuples[1], numLimit, repetitionCount);}
