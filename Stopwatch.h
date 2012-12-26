@@ -14,11 +14,17 @@
 #include <ctime>
 
 #ifdef _WIN32
-#include <Windows.h>
+#   include <Windows.h>
+#else
+#   include <time.h>
+#   include <unistd.h>
 #endif
 
-//#define USE_STD_CLOCK 1
-//#define USE_QUERY_PERFORMANCE_COUNTER 1
+// #define USE_STD_CLOCK 1                  // Lin+Win, inaccurate on Lin.
+// #define USE_QUERY_PERFORMANCE_COUNTER 1  // Windows only (best!)
+#define USE_CLOCK_GETTIME 1                 // Linux/BSD only
+// NB: Default uses std::chrono             // Lin+Win, inaccurate on Win.
+
 
 class Stopwatch {
 public:
@@ -59,19 +65,33 @@ public:
     std::string name;
 
 private:
+
 #ifdef USE_QUERY_PERFORMANCE_COUNTER
     LARGE_INTEGER _startq;
     double _frequency;
+
+#elif USE_CLOCK_GETTIME
+    timespec ts;
+
 #endif
+
     double _elapsed;
     double _start;
 
     double now() {
         #ifdef USE_STD_CLOCK
             return clock();
+
         #elif USE_QUERY_PERFORMANCE_COUNTER
             QueryPerformanceCounter(&_startq);
             return static_cast<double>(_startq.QuadPart);
+
+        #elif USE_CLOCK_GETTIME
+            clock_gettime(CLOCK_REALTIME, &ts);
+            double result = ts.tv_sec;
+            result += ts.tv_nsec / 1000000000.0;
+            return result;
+
         #else
             return std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count() / 1000000000.0;
         #endif
